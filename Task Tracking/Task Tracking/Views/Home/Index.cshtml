@@ -1,0 +1,321 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="masthead">
+    <div class="container-fluid px-0 ">
+        <div class="row gx-4 gx-lg-5 align-items-center justify-content-center text-center">
+            <div class="col-lg-8 align-self-end">
+                <h1 class="text-white font-weight-bold">From Overwhelmed to Organized </h1>
+                <hr class="divider" />
+            </div>
+            <div class="col-lg-8 align-self-baseline">
+                <p class="text-white-75 mb-5">“Seamlessly track and complete tasks with Tasky’s smart dashboard.”</p>
+                <form asp-controller="Home" asp-action="About" method="get">
+                    <button type="submit" class="learn-more">
+                        <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Learn More</span>
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Services-->
+<section class="page-section" id="services">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">Built to Boost Your Productivity</h2>
+        <hr class="divider" />
+        <div class="row gx-4 gx-lg-5">
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <div class="mb-2"><i class="bi bi-check2-square fs-1 iconColor"></i></div>
+                    <h3 class="h4 mb-2">Smart Task Tracking</h3>
+                    <p class="text-muted mb-0">Stay on top of your to-dos with intelligent task management and reminders.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <div class="mb-2"><i class="bi bi-clock-history fs-1 iconColor"></i></div>
+                    <h3 class="h4 mb-2">Real-Time Sync</h3>
+                    <p class="text-muted mb-0">Tasks update across all your devices instantly — no refresh needed.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <div class="mb-2"><i class="bi bi-bar-chart-line fs-1 iconColor"></i></div>
+                    <h3 class="h4 mb-2">Productivity Insights</h3>
+                    <p class="text-muted mb-0">Visualize your progress with built-in analytics and daily reports.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center">
+                <div class="mt-5">
+                    <div class="mb-2"><i class="bi bi-people fs-1 iconColor"></i></div>
+                    <h3 class="h4 mb-2">Team Collaboration</h3>
+                    <p class="text-muted mb-0">Assign tasks, share updates, and work seamlessly with your team.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ 
+
+<!-- Testimonials Section -->
+<section class="testimonials-section" id="testimonials">
+    <div class="container">
+        <div class="section-heading text-center">
+            <h2>What Our Users Say</h2>
+            <hr class="divider">
+            <p class="subtitle">Discover how Tasky has transformed productivity for people around the world</p>
+        </div>
+
+        <div class="testimonials-container">
+            <div class="testimonials-track">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">Tasky has completely transformed how I manage my projects. The intuitive interface and powerful features have boosted my productivity by 40%.</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-details">
+                            <h4>Sarah Johnson</h4>
+                            <p>Project Manager</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">I've tried countless task management apps, but Tasky is the first that actually made me more organized. The real-time sync is a game-changer!</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="author-details">
+                            <h4>Michael Chen</h4>
+                            <p>Software Developer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">As a team leader, Tasky has been invaluable for keeping everyone on the same page. The collaboration features have streamlined our workflow dramatically.</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez">
+                        </div>
+                        <div class="author-details">
+                            <h4>Emily Rodriguez</h4>
+                            <p>Marketing Director</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">The productivity insights have helped me identify time-wasters and focus on what really matters. My efficiency has improved tremendously since using Tasky.</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="David Wilson">
+                        </div>
+                        <div class="author-details">
+                            <h4>David Wilson</h4>
+                            <p>Freelance Designer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">I was skeptical at first, but Tasky has genuinely changed how I approach my daily tasks. The smart reminders keep me on track without being annoying.</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Jessica Taylor">
+                        </div>
+                        <div class="author-details">
+                            <h4>Jessica Taylor</h4>
+                            <p>Content Creator</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">The cross-device synchronization works flawlessly. I can start a task on my laptop and complete it on my phone without any hiccups. Perfect for on-the-go productivity!</p>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="https://randomuser.me/api/portraits/men/71.jpg" alt="Robert Martinez">
+                        </div>
+                        <div class="author-details">
+                            <h4>Robert Martinez</h4>
+                            <p>Business Consultant</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="testimonial-controls">
+            <button class="control-btn prev-btn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="control-btn next-btn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div class="indicators">
+            <div class="indicator active"></div>
+            <div class="indicator"></div>
+            <div class="indicator"></div>
+        </div>
+    </div>
+</section>
+<div class="stats-section">
+    <div class="stats-grid">
+        <div class="stat-item">
+            <h3>10K+</h3>
+            <p>Tasks Managed Daily</p>
+        </div>
+        <div class="stat-item">
+            <h3>5K+</h3>
+            <p>Active Teams</p>
+        </div>
+        <div class="stat-item">
+            <h3>95%</h3>
+            <p>User Satisfaction</p>
+        </div>
+        <div class="stat-item">
+            <h3>3+</h3>
+            <p>Years of Growth</p>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+
+    <script>
+
+             // Simple animation for stats counting
+        document.addEventListener('DOMContentLoaded', function () {
+            const statItems = document.querySelectorAll('.stat-item h3');
+            const statsSection = document.querySelector('.stats-section');
+
+            // Check if stats section is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            // Animate stats counting
+            function animateStats() {
+                if (isInViewport(statsSection)) {
+                    statItems.forEach(stat => {
+                        const target = parseInt(stat.textContent);
+                        let count = 0;
+                        const duration = 2000; // in milliseconds
+                        const increment = target / (duration / 16); // 60fps
+
+                        const updateCount = () => {
+                            if (count < target) {
+                                count += increment;
+                                stat.textContent = Math.round(count) + (stat.textContent.includes('%') ? '%' : '+');
+                                setTimeout(updateCount, 16);
+                            } else {
+                                stat.textContent = target + (stat.textContent.includes('%') ? '%' : '+');
+                            }
+                        };
+
+                        updateCount();
+                    });
+
+                    // Remove event listener after animation
+                    window.removeEventListener('scroll', checkStats);
+                }
+            }
+
+            // Check stats on scroll
+            function checkStats() {
+                animateStats();
+            }
+
+            window.addEventListener('scroll', checkStats);
+
+            // Check on initial load
+            animateStats();
+        });
+
+    </script>
+
+
+
+}

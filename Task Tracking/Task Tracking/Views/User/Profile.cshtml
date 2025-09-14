@@ -1,0 +1,112 @@
+﻿@model Task_Tracking.Models.User
+@{
+    ViewData["Title"] = "My Profile";
+}
+
+@section Styles {
+<link rel="Stylesheet" href="~/css/Tasks.css" asp-append-version="true" /> 
+
+}
+
+<div class="tasks-container">
+    <div class="page-header">
+        <h1 class="page-title"><i class="fas fa-user-circle"></i> My Profile</h1>
+    </div>
+
+    <div class="tasks-content">
+        <form asp-controller="User" asp-action="UpdateProfile" method="post" enctype="multipart/form-data" class="profile-form">
+
+            <!-- Profile Photo -->
+            <div class="profile-photo-section">
+                <div class="profile-photo">
+                    <img id="photoPreview" src="@Model.ProfilePicture" alt="Profile Photo">
+                </div>
+                <div class="upload-btn">
+                    <label for="profilePhotoInput" class="btn btn-primary">
+                        <i class="fas fa-camera"></i> Change Photo
+                    </label>
+                    <input type="file" id="profilePhotoInput" name="ProfilePhoto" accept="image/*" style="display:none;" onchange="previewPhoto(event)">
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-user"></i> Full Name</label>
+                    <input class="form-control" name="UserName" value="@Model.UserName" type="text" required />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-envelope"></i> Email</label>
+                    <input class="form-control" name="Email" value="@Model.Email" type="email" required readonly />
+                </div>
+
+                
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-lock"></i> Old Password</label>
+                    <input class="form-control" name="OldPassword" type="password" placeholder="Enter old password" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-key"></i> New Password</label>
+                    <input class="form-control" name="NewPassword" type="password" placeholder="Enter new password" />
+                </div>
+
+               
+            </div>
+
+            <div class="form-actions">
+                <a asp-controller="User" asp-action="Tasks" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back To Tasks
+                </a>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Save Changes
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+
+
+@section Scripts {
+    <script>
+
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+    </script>
+    <script>
+        function previewPhoto(event) {
+            const reader = new FileReader();
+            reader.onload = function(){
+                document.getElementById("photoPreview").src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const errorMessage = '@TempData["ErrorMessage"]';
+        if (errorMessage) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops!',
+                text: errorMessage,
+                confirmButtonColor: '#E72463'
+            });
+        }
+
+        const successMessage = '@TempData["SuccessMessage"]';
+        if (successMessage) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: successMessage,
+                confirmButtonColor: '#3085d6'
+            });
+        }
+    </script>
+
+}

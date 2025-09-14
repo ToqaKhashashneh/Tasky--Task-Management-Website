@@ -1,0 +1,58 @@
+﻿@model Task_Tracking.Models.Task
+@{
+    ViewData["Title"] = "Add Task";
+}
+
+@section Styles {
+	<link rel="stylesheet" href="~/css/Tasks.css" asp-append-version="true">
+}
+
+<div class="tasks-container">
+    <div class="page-header">
+        <h1 class="page-title"><i class="fas fa-plus-circle"></i> Add New Task</h1>
+    </div>
+
+    <div class="tasks-content">
+        <form asp-controller="User" asp-action="SubmitTask" method="post" class="task-form">
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-sticky-note"></i> Title</label>
+                    <input class="form-control" name="Name" value="@Model?.Name" type="text" required />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-pencil-alt"></i> Description</label>
+                    <input class="form-control" name="Description" value="@Model?.Description" type="text" required />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-calendar-alt"></i> Start Date</label>
+                    <input class="form-control" name="CreatedDate" value="@Model?.CreatedDate?.ToString("yyyy-MM-dd")" type="date" required min="@DateTime.Now.ToString("yyyy-MM-dd")" />
+                    <span asp-validation-for="CreatedDate" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-calendar-check"></i> Due Date</label>
+                    <input class="form-control" name="DueDate" value="@Model?.DueDate?.ToString("yyyy-MM-dd")" type="date" required />
+                    <span asp-validation-for="DueDate" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div class="form-actions">
+                <a asp-controller="User" asp-action="Tasks" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back To Tasks
+                </a>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Submit Task
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />

@@ -1,0 +1,218 @@
+﻿
+:root {
+    --primary-color: #f4623a;
+    --primary-hover: #e14a2a;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --background-light: #f8f9fa;
+    --border-color: #e0e0e0;
+    --success-color: #2ecc71;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.page-section {
+    padding: 5rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.divider {
+    height: 4px;
+    width: 80px;
+    background-color: var(--primary-color);
+    margin: 1.5rem auto;
+    border: none;
+    border-radius: 2px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.info-icon {
+    background-color: rgba(244, 98, 58, 0.1);
+    color: var(--primary-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.info-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.info-content p {
+    color: var(--text-light);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--background-light);
+        color: var(--text-dark);
+        transition: all 0.3s ease;
+    }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+
+.form-control {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: var(--background-light);
+    margin-top: 1vw;
+}
+
+    .form-control:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(244, 98, 58, 0.2);
+    }
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+    .btn:hover {
+        background-color: var(--primary-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(244, 98, 58, 0.3);
+    }
+
+    .btn i {
+        margin-left: 0.5rem;
+    }
+
+.notification {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    background-color: var(--success-color);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateX(150%);
+    transition: transform 0.4s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+    .notification.show {
+        transform: translateX(0);
+    }
+
+    .notification i {
+        margin-right: 0.5rem;
+    }
+
+

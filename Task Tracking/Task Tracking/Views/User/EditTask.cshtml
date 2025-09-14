@@ -1,0 +1,77 @@
+﻿@model Task_Tracking.Models.Task
+@{
+    ViewData["Title"] = "Edit Task";
+}
+
+@section Styles {
+	<link rel="stylesheet" href="~/css/Tasks.css" asp-append-version="true">
+}
+
+<div class="tasks-container">
+    <div class="page-header">
+        <h1 class="page-title"><i class="fas fa-edit"></i> Edit Task</h1>
+    </div>
+
+    <div class="tasks-content">
+        <form asp-controller="User" asp-action="SubmitEditTask" method="post" class="task-form">
+            <input type="hidden" name="Id" value="@Model.Id" />
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-sticky-note"></i> Title</label>
+                    <input class="form-control" name="Name" value="@Model?.Name" type="text" required />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-pencil-alt"></i> Description</label>
+                    <input class="form-control" name="Description" value="@Model?.Description" type="text" required />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-calendar-alt"></i> Start Date</label>
+                    <input class="form-control" name="CreatedDate"
+                           value="@(Model.CreatedDate.HasValue ? Model.CreatedDate.Value.ToDateTime(TimeOnly.MinValue).ToString("yyyy-MM-dd") : "")"
+                           type="date" required />
+                    <span asp-validation-for="CreatedDate" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-calendar-check"></i> Due Date</label>
+                    <input class="form-control" name="DueDate"
+                           value="@(Model.DueDate.HasValue ? Model.DueDate.Value.ToDateTime(TimeOnly.MinValue).ToString("yyyy-MM-dd") : "")"
+                           type="date" required />
+                    <span asp-validation-for="DueDate" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label"><i class="fas fa-tasks"></i> Status</label>
+                    @{
+                        var status = Model.Status;
+                    }
+                    <select class="form-control" name="Status">
+                        <option value="To Do" selected="@(status == "To Do")">To Do</option>
+                        <option value="Doing" selected="@(status == "Doing")">Doing</option>
+                        <option value="Done" selected="@(status == "Done")">Done</option>
+                    </select>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <div class="form-actions">
+                <a asp-controller="User" asp-action="Tasks" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back To Tasks
+                </a>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Save Changes
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />

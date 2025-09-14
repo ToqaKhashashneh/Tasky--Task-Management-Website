@@ -1,0 +1,141 @@
+﻿@model Task_Tracking.Models.Contact
+@section Styles {
+	<link rel="stylesheet" href="~/css/Contact.css" asp-append-version="true">
+}
+    <!-- Contact Section -->
+    <section class="page-section" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <h2>Get In Touch With Us</h2>
+                <hr class="divider" />
+                <p class="subtitle">Ready to start your next project? Send us a message and we'll get back to you as soon as possible!</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Our Location</h3>
+                            <p>123 Business Avenue, Amman <br>Jordan, JO 10001</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Phone Number</h3>
+                        <p>+9678232355</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email Address</h3>
+                            <p>contact@Tasky.com</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm" method="post" asp-action="SubmitContact" asp-controller="Home">
+                        <!-- Name input-->
+                        <div >
+                            <input asp-for="FullName" class="form-control" id="name" type="text" placeholder="Enter your name..." required />
+                        </div>
+
+                        <!-- Email address input-->
+                        <div >
+                            <input asp-for="Email" class="form-control" id="email" type="email" placeholder="name@example.com" required />
+                        </div>
+
+                        <!-- Phone number input-->
+                        <div>
+                            <input asp-for="PhoneNumber" class="form-control" id="phone" type="tel" placeholder="+96278456890" required />
+                        </div>
+
+                        <!-- Message input-->
+                        <div >
+                            <textarea asp-for="Message" class="form-control" id="message" placeholder="Enter your message here..." style="height: 10rem" required></textarea>
+                        </div>
+
+                        <!-- Submit Button-->
+                        <button class="btn" type="submit">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span>Your message has been sent successfully!</span>
+    </div>
+
+      @section Scripts {
+      
+      <script>
+                  //Contact
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('contactForm');
+            const notification = document.getElementById('notification');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Simple form validation
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const message = document.getElementById('message').value;
+
+                if (name && email && phone && message) {
+                    // Show success notification
+                    notification.classList.add('show');
+
+                    // Reset form
+                    form.reset();
+
+                    // Hide notification after 4 seconds
+                    setTimeout(() => {
+                        notification.classList.remove('show');
+                    }, 4000);
+                }
+            });
+
+
+            formInputs.forEach(input => {
+                // Check if input has value on page load
+                if (input.value) {
+                    input.nextElementSibling.classList.add('active');
+                }
+
+                input.addEventListener('focus', () => {
+                    input.nextElementSibling.classList.add('active');
+                });
+
+                input.addEventListener('blur', () => {
+                    if (!input.value) {
+                        input.nextElementSibling.classList.remove('active');
+                    }
+                });
+            });
+        });
+      </script>
+      }

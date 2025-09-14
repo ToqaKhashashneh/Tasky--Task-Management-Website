@@ -1,0 +1,65 @@
+﻿@model Task_Tracking.Models.User
+
+@section Styles {
+	<link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+	<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+}
+
+
+<div class="wrapper" style="background-image: url('../images/Regestration.jpg');">
+	<div class="inner">
+		<div class="image-holder">
+			<img src="../images/Regestration.jpg" alt="">
+		</div>
+		<form asp-action="SubmitSignIn" method="post">
+			<h3>Sign In Form</h3>
+
+		
+			<div class="form-wrapper">
+				<input name="Email" type="email" placeholder="Email Address" class="form-control" required>
+				<i class="zmdi zmdi-email"></i>
+				<span asp-validation-for="Email" class="text-danger"></span>
+			</div>
+
+			<div class="form-wrapper">
+				<input name="Password" type="password" placeholder="Password" class="form-control" required>
+				<i class="zmdi zmdi-lock"></i>
+				<span asp-validation-for="Password" class="text-danger"></span>
+			</div>
+	
+			<button type="submit">
+				SignIn
+				<i class="zmdi zmdi-arrow-right"></i>
+			</button>
+			<div class="SignInDiv">
+
+			Don't have an account? <a  asp-action  ="SignUp">Sign Up</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const errorMessage = '@TempData["Error"]';
+
+		
+
+			if (errorMessage) {
+				Swal.fire({
+					icon: 'error',
+					title: 'Oops!',
+					text: errorMessage,
+					confirmButtonColor: '#E72463'
+				});
+			}
+		});
+	</script>
+
+
+
+}
